@@ -15,7 +15,7 @@ export async function exportToCSV(data) {
 
     let header;
 
-    if (!fileExists) {
+    if (!fileNotEmpty) {
     header = Object.keys(data[0]).map((key) => ({ id: key, title: key }));
     } else {
     const firstLine = fs.readFileSync(filePath, "utf8").split("\n")[0];
